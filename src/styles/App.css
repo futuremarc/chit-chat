@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.App {
+  font-family: 'Lato', sans-serif;
+  height: 100%;
+}
+
+.App-logo {
+  height: 60px;
+  border-radius: 50%;
+}
+
+
+.App-header {
+  background-color: #464e66;
+  text-align: center;
+  height: 80px;
+  padding: 10px;
+  color: white;
+  z-index: 2;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.chat-form-container {
+  height: 50px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 50px;
+  width: 100%;
+  font-size: 20px;
+}
+
+ul, li {
+  list-style: none;
+  display: block;
+  margin:0;
+  padding: 0;
+  overflow-y: scroll;
+  clear: both;
+}
+
+.chat-log {
+  width: 100%;
+  padding: 15px 20px 15px 20px;
+  overflow-y: scroll;
+  max-height: 530px;
+  bottom: 50px;
+  position: absolute;
+}
+
+.sticker {
+  width: 200px;
+}
+
+.message {
+  border-radius: 8px;
+  padding: 4px 8px 4px 8px;
+  font-size: 18px;
+  margin: 3px 0px 3px 0px;
+  display: inline-block;
+}
+
+.incoming-text {
+  background-color: #eee;
+  color: #000;
+  border-bottom-left-radius: 0;
+}
+
+.outgoing-text {
+  background-color: #b2ed8b;
+  border-bottom-right-radius: 0;
+  float: right;
+}
+
+.outgoing-sticker {
+  float: right;
+}
+
+.chat-input {
+  width: 85%;
+  height: 50px;
+  display: inline-block;
+  font-size: 20px;
+  padding-left: 10px;
+  border: 1px solid #eee;
+  border-right: none;
+  border-bottom: none;
+}
+
+.chat-submit {
+  width: 15%;
+  height: 100%;
+  display: inline-block;
+  font-size: 20px;
+  height: 51px;
+  border-radius: 0px;
+  background-color: #fff !important;
+  border: none;
+  border-top:1px solid #eee;
+  color: #5685e4;
+  outline: none;
+}
