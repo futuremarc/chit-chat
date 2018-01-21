@@ -9,16 +9,7 @@ const composeSetup = isDev &&
 
 const defaultState = {
   form: '',
-  messages: [
-    {
-      type: 'text',
-      content: 'first',
-      timestamp: window.performance.now(),
-      direction: 'outgoing',
-      user: {
-        name: 'marc'
-      }
-    }]
+  messages: []
 };
 
 let store;

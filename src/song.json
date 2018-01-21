@@ -1,0 +1,50 @@
+{
+  "messages" :
+  [
+    {
+      "type": "text",
+      "content": "Well, I'd admit it I let life get the best of me",
+      "timestamp": "00:00:26",
+      "direction": "incoming",
+      "user": {
+        "name": "lighten up!"
+      }
+    },
+    {
+      "type": "text",
+      "content": "My excuses laid out for everyone to see",
+      "timestamp": "00:00:31",
+      "direction": "incoming",
+      "user": {
+        "name": "lighten up!"
+      }
+    },
+    {
+      "type": "text",
+      "content": "Don't wanna go home empty handed!",
+      "timestamp": "00:00:35",
+      "direction": "incoming",
+      "user": {
+        "name": "lighten up!"
+      }
+    },
+    {
+      "type": "text",
+      "content": "So sick of wasting second chances...",
+      "timestamp": "00:00:40",
+      "direction": "incoming",
+      "user": {
+        "name": "lighten up!"
+      }
+    },
+    {
+      "type": "sticker",
+      "content": "http://www.line-stickers.com/wp-content/uploads/2016/05/A-lot-of-cats.-Animated-.png",
+      "timestamp": "00:00:44",
+      "direction": "incoming",
+      "user": {
+        "name": "lighten up!"
+      }
+    }
+  ]
+}

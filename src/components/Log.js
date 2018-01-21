@@ -1,5 +1,7 @@
 import React from 'react'
-import sticker from '../images/sticker_1.jpg'
+import song from '../song.json'
+import {sendMessage} from '../actions/index'
+import store from '../store'
 
 
 class Log extends React.Component {
@@ -7,27 +9,32 @@ class Log extends React.Component {
   constructor(props){
   	super(props)
     this.renderBubbles = this.renderBubbles.bind(this)
+    this.convertTimeToMs = this.convertTimeToMs.bind(this)
+  }
+
+  componentWillMount() {
+    song.messages.map((message, index) => {
+      setTimeout(() => {
+        store.dispatch(sendMessage(message))
+      },this.convertTimeToMs(message.timestamp))
+    })
+  }
+
+  convertTimeToMs( time ) {
+    const timeParts = time.split(':')
+    const msHours = parseInt(timeParts[0]) * 60 * 60 * 1000
+    const msMins = parseInt(timeParts[1]) * 60 * 1000
+    const msSecs = parseInt(timeParts[2]) * 1000
+    const ms = msHours + msMins + msSecs
+    return ms
   }
 
   componentDidMount() {
-    let chatLog = this.refs.chatLog
-    chatLog.scrollTop = chatLog.scrollHeight
+    this.chatLog.scrollTop = this.chatLog.scrollHeight
   }
 
-  //
-  // {
-  //   type: 'text',
-  //   content: e.chatInput,
-  //   timestamp: window.performance.now(),
-  //   direction: 'outgoing',
-  //   user: {
-  //     name: 'marc'
-  //   }
-  // }
-
   componentDidUpdate() {
-    let chatLog = this.refs.chatLog
-    chatLog.scrollTop = chatLog.scrollHeight
+    this.chatLog.scrollTop = this.chatLog.scrollHeight
   }
   renderBubbles() {
     const {messages} = this.props
@@ -35,13 +42,13 @@ class Log extends React.Component {
     return messages.map((message, index) => {
       if (message.type === 'text') {
         return (
-          <li>
+          <li key={index}>
             <div className={`${message.direction}-${message.type} message`}>{message.content}</div>
           </li>
         )
       } else {
         return (
-          <li>
+          <li key={index}>
             <div className={`${message.direction}-${message.type} message`}>
               <img className={message.type} src={`${message.content}`}/>
             </div>
@@ -54,7 +61,7 @@ class Log extends React.Component {
 
   render() {
     return (
-      <ul ref="chatLog" className="chat-log">
+      <ul ref={el => this.chatLog = el} className="chat-log">
         {this.renderBubbles()}
       </ul>
     )
